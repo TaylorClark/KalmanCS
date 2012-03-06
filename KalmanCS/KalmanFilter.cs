@@ -42,7 +42,6 @@ namespace KalmanCS
 
             randomWalk[0] = (NumberType)SimpleRNG.GetNormal( 0f, sourceSigma );
 
-            Random rng = new Random();
             for( int curEntryIndex = 1; curEntryIndex < randomWalk.Length; ++curEntryIndex )
                 randomWalk[curEntryIndex] = (NumberType)( sourceScale * randomWalk[curEntryIndex - 1] + SimpleRNG.GetNormal( 0f, sourceSigma ) );
 
@@ -78,7 +77,6 @@ namespace KalmanCS
         {
             NumberType[] squareValues = new NumberType[numEntries];
 
-            double curValue = 1;
             int quarterOfEntries = numEntries / 4;
             for( int curEntryIndex = 0; curEntryIndex < numEntries; ++curEntryIndex )
             {
